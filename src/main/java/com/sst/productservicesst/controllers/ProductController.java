@@ -20,9 +20,11 @@ public class ProductController { // waiter
         this.productService = productService;
     }
 
-    //localhost:8080/products/10
+
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable("id") Long id) {
+//        throw new RuntimeException("something is wrong");
+
         return productService.getProductById(id);
     }
 

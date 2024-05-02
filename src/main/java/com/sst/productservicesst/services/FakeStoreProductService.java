@@ -23,7 +23,6 @@ public class FakeStoreProductService implements ProductService {
                 FakeStoreProductDto.class);
 
 
-//        convert FakeStoreProductDto object to Product object.
         Product product = new Product();
         return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
 
@@ -31,7 +30,7 @@ public class FakeStoreProductService implements ProductService {
 
     public List<Product> getAllProducts(){
         RestTemplate restTemplate =new RestTemplate();
-        FakeStoreProductDto[] fakeStoreProductDtos=// sending an array
+        FakeStoreProductDto[] fakeStoreProductDtos=
                 restTemplate.getForObject("https://fakestoreapi.com/products",FakeStoreProductDto[].class);
         List<Product> products =new ArrayList<>();
 
